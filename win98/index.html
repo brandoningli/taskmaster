@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <title>Windows 98 - Taskmaster - Brandon Ingli</title>
+  <style>
+    html {
+      background-color: #007f7f;
+      margin: 0;
+      padding: 0;
+      font-family: "Pixelated MS Sans Serif",Arial !important;
+    }
+    .wrapper {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 99.5vw;
+    }
+    #calchelpwrapper {
+      display: none;
+    }
+
+    .startmenu {
+      position: absolute;
+      bottom: 0;
+      height: 25px;
+      width: 98.9vw;
+      background-color: #aaa;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5px;
+    }
+    .buttongroup {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    #clock {
+      border: 0.5px solid #808080;
+      padding: 2px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="window" style="width: 300px;">
+      <div class="title-bar">
+        <div class="title-bar-text">The Best Calculator</div>
+        <div class="title-bar-controls">
+          <button aria-label="Help" id="help"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="field-row">
+          <input type="number" name="a" id="a" placeholder="5">
+          &nbsp;&nbsp;&nbsp;+
+          <input type="number" name="b" id="b" placeholder="10">
+        </div>
+        <div class="field-row">
+          <button id="calculate">
+            Calculate
+          </button>
+        </div>
+        <hr>
+        <div class="field-row">
+          <label for="ans">Answer:</label>
+          <input type="number" name="ans" id="ans">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper" id="calchelpwrapper">
+    <div class="window" id="calchelp" style="z-index: 99">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          The Best Calculator Help
+        </div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="document.querySelector('#calchelpwrapper').style.display = 'none';"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>How to use The Best Calculator:</p>
+        <ol>
+          <li>Enter a number into the first box.</li>
+          <li>Enter a number into the second box.</li>
+          <li>Press the Calculate button.</li>
+          <li>See the answer in the Answer box.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="startmenu">
+    <div class="buttongroup">
+      <a href="https://pop.system76.com/" target="_blank"><button id="start">Start</button></a>
+      <div class="title-bar-controls"><a href="https://www.youtube.com/watch?v=b71rpN1iJKA" target="_blank"><button aria-label="Help" style="height: 25px; background-position: center;"></button></a></div>
+    </div>
+    <div id="clock">9:41am</div>
+  </div>
+</body>
+<script>
+  document.querySelector("#calculate").onclick = () => {
+    document.querySelector("#ans").value = document.querySelector("#a").value + document.querySelector("#b").value;
+  }
+  document.querySelector("#help").onclick = () => {
+    document.querySelector("#calchelpwrapper").style.display = "grid";
+  }
+  setInterval(() => {
+    var today = new Date();
+    document.querySelector("#clock").innerHTML = today.toLocaleTimeString();
+  }, 500)
+</script>
+</html>
