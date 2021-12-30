@@ -1,0 +1,133 @@
+:root {
+  --color-1: #ffff00;
+  --color-2: #ff0000;
+  --color-3: #009000;
+  --color-4: #d116d1;
+  --color-5: #4682b4;
+  --color-6: #dc143c;
+  --color-7: #00ffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.dvdlogo {
+  fill: var(--color-1);
+  animation: dvd-fill 20s forwards infinite alternate-reverse linear;
+}
+
+#dvdsvg {
+  width: 15vw;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: dvd-motion 20s forwards infinite alternate-reverse linear;
+}
+
+@keyframes dvd-motion {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  
+  15% {
+     top: 90%;
+     left: 45%;
+  }
+
+  30% {
+     top: 40%;
+     left: 88%;
+  }
+
+  45% {
+     top: 0%;
+     left: 50%;
+  }
+
+  60% {
+     top: 60%;
+     left: 0%;
+  }
+
+  75% {
+     top: 90%;
+     left: 30%;
+  }
+
+  85% {
+     top: 40%;
+     left: 88%;
+
+  }
+
+  100% {
+     top: 0;
+     left: 0;
+  }
+}
+
+@keyframes dvd-fill {
+  0% {
+    fill: var(--color-1);
+  }
+  14.99999% {
+    fill: var(--color-1);
+  }
+
+  15% {
+     fill: var(--color-2);
+  }
+  29.99999% {
+    fill: var(--color-2);
+  }
+
+  30% {
+     fill: var(--color-3);
+  }
+  44.99999% {
+    fill: var(--color-3);
+  }
+
+  45% {
+     fill: var(--color-4);
+  }
+  59.99999% {
+    fill: var(--color-4);
+  }
+
+  60% {
+     fill: var(--color-5);
+  }
+  74.99999% {
+    fill: var(--color-5);
+  }
+
+  75% {
+     fill: var(--color-6);
+  }
+  84.99999% {
+    fill: var(--color-6);
+  }
+  
+  85% {
+     fill: var(--color-7);
+  }
+  99.99999% {
+    fill: var(--color-7);
+  }
+
+  100% {
+     fill: var(--color-1);
+  }
+}
